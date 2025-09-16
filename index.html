@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini MMORPG Game Client</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="gameCanvas"></canvas>
+    <div id="avatarUpload" style="position: fixed; top: 10px; left: 10px; z-index: 1000;">
+        <input type="file" id="avatarFile" accept="image/*" style="display: none;">
+        <button id="uploadButton" style="background: #4CAF50; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; margin-right: 5px;">
+            Upload Avatar
+        </button>
+    </div>
+    
+    <div id="emotePanel" style="position: fixed; top: 10px; right: 10px; z-index: 1000; background: rgba(0,0,0,0.8); padding: 10px; border-radius: 10px;">
+        <div style="color: white; font-size: 12px; margin-bottom: 5px; text-align: center;">Emotes</div>
+        <div style="display: flex; gap: 5px; flex-wrap: wrap;">
+            <button class="emote-btn" data-emote="wave" style="background: #2196F3; color: white; border: none; padding: 8px; border-radius: 5px; cursor: pointer; font-size: 12px;">👋</button>
+            <button class="emote-btn" data-emote="dance" style="background: #9C27B0; color: white; border: none; padding: 8px; border-radius: 5px; cursor: pointer; font-size: 12px;">💃</button>
+            <button class="emote-btn" data-emote="jump" style="background: #FF9800; color: white; border: none; padding: 8px; border-radius: 5px; cursor: pointer; font-size: 12px;">🦘</button>
+            <button class="emote-btn" data-emote="heart" style="background: #E91E63; color: white; border: none; padding: 8px; border-radius: 5px; cursor: pointer; font-size: 12px;">❤️</button>
+            <button class="emote-btn" data-emote="laugh" style="background: #FFEB3B; color: black; border: none; padding: 8px; border-radius: 5px; cursor: pointer; font-size: 12px;">😂</button>
+            <button class="emote-btn" data-emote="thumbsup" style="background: #4CAF50; color: white; border: none; padding: 8px; border-radius: 5px; cursor: pointer; font-size: 12px;">👍</button>
+        </div>
+    </div>
+    
+    <div id="chatPanel" style="position: fixed; bottom: 10px; left: 10px; width: 400px; height: 200px; z-index: 1000; background: rgba(0,0,0,0.8); border-radius: 10px; display: flex; flex-direction: column;">
+        <div id="chatHeader" style="background: rgba(255,255,255,0.1); padding: 8px; border-radius: 10px 10px 0 0; color: white; font-size: 12px; font-weight: bold;">
+            Chat
+        </div>
+        <div id="chatMessages" style="flex: 1; padding: 10px; overflow-y: auto; color: white; font-size: 12px; line-height: 1.4;">
+            <!-- Chat messages will appear here -->
+        </div>
+        <div id="chatInput" style="padding: 10px; border-top: 1px solid rgba(255,255,255,0.2);">
+            <input type="text" id="chatMessageInput" placeholder="Type a message..." 
+                   style="width: 100%; padding: 8px; border: none; border-radius: 5px; background: rgba(255,255,255,0.9); color: black; font-size: 12px; outline: none;">
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
